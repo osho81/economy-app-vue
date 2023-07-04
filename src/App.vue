@@ -7,6 +7,8 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <!-- Loading page, first page presented -->
 
+
+
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -28,7 +30,7 @@ import HelloWorld from './components/HelloWorld.vue'
           <button className="btn btn-outline btn-primary">About</button>
         </RouterLink>
 
-        <!-- RouterLinks wrapped in Buttons:  -->
+        <!-- RouterLinks wrapped in Buttons (don't use this here):  -->
         <!-- <button className="btn btn-outline btn-primary ml-4 mr-4 p-0">
           <RouterLink to="/">Home</RouterLink>
         </button>

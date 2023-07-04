@@ -1,4 +1,4 @@
-<!-- Customized componentto  re-use for an icon and text etc -->
+<!-- Customized component to  re-use for an icon and text etc -->
 
 <template>
   <div class="item">
