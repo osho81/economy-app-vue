@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 defineProps<{ // Props/msg is sent in via App.vue
   msg: string
 }>()
@@ -6,7 +7,7 @@ defineProps<{ // Props/msg is sent in via App.vue
 
 <template>
   <div class="greetings">
-    <h1 class="green text-5xl font-semibold">{{ msg }}</h1>
+    <h1 class="green text-4xl font-semibold">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
@@ -16,9 +17,12 @@ defineProps<{ // Props/msg is sent in via App.vue
 </template>
 
 <style scoped>
-@tailwind base;
+/* import tailwind from main css: */
+@import '../assets/main.css';
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 h1 {
   font-weight: 500;
@@ -37,6 +41,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
