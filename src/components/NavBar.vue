@@ -9,9 +9,14 @@ const brandString: string = "EcApp";
             <div className="dropdown" :style="{ zIndex: '3' }">
                 <!-- {/* Hamburger meny, for smaller screen: */} -->
                 <label tabIndex={0} className="btn lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    <!-- Changed broken svg to this svg from fontawsome:  -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="60%"
+                        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com 
+                            License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 
+                            113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 
+                            416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
                     </svg>
                 </label>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
@@ -37,7 +42,7 @@ const brandString: string = "EcApp";
                     </li>
                 </ul>
             </div>
-            <RouterLink to="/" className="font-bold text-2xl">{{ brandString }}</RouterLink>
+            <RouterLink to="/" className="hidden md:block font-bold text-2xl lg:ml-10">{{ brandString }}</RouterLink>
         </div>
 
         <!-- {/* Top nav bar: */} -->
@@ -101,5 +106,6 @@ hr {
     border-radius: 5px;
     /* position: absolut; */
 }
+
 </style>
   
