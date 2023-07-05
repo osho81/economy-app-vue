@@ -1,54 +1,28 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
 // Tailwind is imported in main.ts, no need to import here in this case
 </script>
 
+ <!-- Loading page, first page presented -->
 <template>
-  <!-- Loading page, first page presented -->
-
-
-
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <!-- HelloWorld Component takes a prop  -->
-      <HelloWorld msg="Economy App!" />
-
-      <nav>
-
-        <!-- Just RouterLinks:  -->
-        <!-- <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink> -->
-
-        <!-- RouterLinks wrapped in Buttons:  -->
-        <RouterLink to="/">
-          <button className="btn btn-outline btn-primary">Home</button>
-        </RouterLink>
-        <RouterLink to="/about">
-          <button className="btn btn-outline btn-primary">About</button>
-        </RouterLink>
-
-        <!-- RouterLinks wrapped in Buttons (don't use this here):  -->
-        <!-- <button className="btn btn-outline btn-primary ml-4 mr-4 p-0">
-          <RouterLink to="/">Home</RouterLink>
-        </button>
-        <button className="btn btn-outline btn-primary p-0">
-          <RouterLink to="/about">About</RouterLink>
-        </button> -->
-
-      </nav>
-    </div>
-  </header>
+  <!-- My customized nav bar: -->
+  <NavBar className="navbar" />
 
   <!-- Router view displays in accordance with index.ts in router folder -->
-  <!--  -->
   <RouterView />
 </template>
 
 <style scoped>
 /* Tailwind is imported in main.ts, no need to import here in this case */
+
+.navbar {
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  margin-top: 0%;
+}
 
 header {
   line-height: 1.5;
@@ -94,15 +68,23 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
+
+  .navbar {
+    min-width: 100% !important;
+    position: absolute;
+    top: 0;
+    margin-top: 0%;
+  }
+
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
+  /* .logo {
     margin: 0 2rem 0 0;
-  }
+  } */
 
   header .wrapper {
     display: flex;
