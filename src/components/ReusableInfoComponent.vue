@@ -1,4 +1,5 @@
 <!-- Customized component to  re-use for an icon and text etc -->
+<!-- Template from VUE, not used in this project as of 230706 -->
 
 <template>
   <div class="item">

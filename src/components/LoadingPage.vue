@@ -1,6 +1,5 @@
 
 <script setup lang="ts">
-import type IntroInfo from './IntroInfo.vue';
 
 </script>
 
