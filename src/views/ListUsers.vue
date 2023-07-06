@@ -8,14 +8,14 @@ import { getUsers } from '@/service/userService.js';
 // & mounted() lifecycle hook
 export default {
     data() {
-        return {
-            usersList: []
-        }
+        let usersList: any[] = []; // Declare array in ts
+        return { usersList }
     },
     mounted() {
         getUsers()
-            .then((response: { data: never[]; }) => {
-                this.usersList = response.data
+            .then((response: { data: any[]; }) => {
+                this.usersList = response.data;
+                console.log(this.usersList);
             })
     }
 }
