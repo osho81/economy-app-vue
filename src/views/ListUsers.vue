@@ -26,10 +26,10 @@ export default {
 </script>
 
 <template>
-    <div className='pt-10 sm:p-10 mb-6'>
+    <div className='m-6 pt-10 sm:p-10'>
 
         <div className="overflow-x-auto">
-            <table className="table">
+            <table className="table table-zebra">
                 <thead className='text-xs p-0 m-0 space-x-0 sm:text-sm'>
                     <tr>
                         <th className='p-0 m-0'>User
