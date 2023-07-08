@@ -6,6 +6,7 @@
     "isolatedModules": true, // Added 230705
     "skipLibCheck": true, // Added 230705
     "noImplicitAny": false, // Added 230706
+    "allowJs": true, // Added 230706; for mixed js/ts projects
     "composite": true,
     "baseUrl": ".",
     "paths": {
