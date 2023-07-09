@@ -6,12 +6,16 @@ export default class MyNameClass {
   userName = "";
   password = "";
 
-  constructor(fname, lname) {
-    this.firstName = fname;
-    this.lastName = lname;
+  // List of savingsgoals for user
+  savingsGoals = [];
+
+  constructor(firstName, lastName, email, userName, password, savingsGoals) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.email = email;
     this.userName = userName;
     this.password = password;
+    this.savingsGoals = savingsGoals;
   }
 
   getFullName() {
@@ -31,6 +35,10 @@ export default class MyNameClass {
   }
   getPassword() {
     return this.password;
+  }
+
+  getSavingsGoals() {
+    return this.savingsGoals;
   }
 
 }

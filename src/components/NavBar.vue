@@ -47,10 +47,10 @@ const brandString: string = "EcApp";
 
         <!-- {/* Top nav bar: */} -->
         <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 text-base font-semibold">
                 <!-- {/* change a tags into react router links/navlinks */} -->
                 <li>
-                    <RouterLink className="font-semibold text-base" to="/listusers">List users</RouterLink>
+                    <RouterLink className="font-base" to="/listusers">List users</RouterLink>
                 </li>
                 <li tabIndex={0}>
                     <details className='dropdown'>
@@ -88,10 +88,10 @@ const brandString: string = "EcApp";
 @tailwind utilities;
 
 /* click on brand-link goes to home, html generates an a tag:  */
-a {
+/* a {
     font-weight: 700 !important;
     font-size: x-large;
-}
+} */
 
 .navbar-start .router-link-active {
     font-weight: 700 !important;

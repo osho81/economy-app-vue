@@ -1,26 +1,51 @@
 <script lang="ts">
+// Note: no script setup in this file
 
 // Syntax for import ts is slightly different; quick Z_FIXED, ts-ignore: 
 // @ts-ignore
 import { getUsers } from '@/service/userService.js';
 import type User from '@/models/User'; // Backend mirroring User
+import { ref } from 'vue';
+
+
+const selectedUser = ref({}) // Control state
 
 // Get UsersList using export approach (i.e. instead of script setup)
 // & mounted() lifecycle hook
 export default {
+
     data() {
         // let usersList: any[] = []; // Declare array in ts, if no User model available
         let usersList: User[] = []; // Use backend-mirroring User model 
         return { usersList } // This is exported to template (html component)
+
+
     },
     mounted() {
         getUsers()
             .then((response) => { // gets response.data from service getUsers
                 this.usersList = response;
+                // usersList1 = response;
                 console.log(response);
             })
+    },
+
+
+    methods: {
+        displayGoals: function (event) {
+            console.log("hiii");
+            alert(`Hello ${selectedUser.value}!`)
+            // `event` is the native DOM event
+            if (event) {
+                alert(event.target.tagName)
+            }
+        }
     }
+
+
 }
+
+
 
 
 </script>
@@ -82,10 +107,9 @@ export default {
                         <td className='p-0 m-0'> {{ user.userName }} </td>
                         <td className='p-0 m-0'> {{ user.password }} </td>
                         <td className='p-0 m-0'>
-                            <!-- <span className='car-detail-btn' id={car.id} onclick={{viewCarDetails}}>
-                                <FontAwesomeIcon icon={faInfoCircle} size="2xl"
-                                    className='not-clickable-part golden-color' />
-                            </span> -->
+                            <span className='user-detail-btn ml-4' id={user.id} @click="displayGoals">
+                                <font-awesome-icon icon="circle-info" size="2xl" />
+                            </span>
                         </td>
                     </tr>
 
@@ -106,6 +130,13 @@ export default {
             </table>
         </div>
     </div>
+
+    <!-- <button @click="open = true">Open Modal</button>
+
+    <div v-if="open" class="modal">
+        <p>Hello from the modal!</p>
+        <button @click="open = false">Close</button>
+    </div> -->
 </template> 
 
 
