@@ -10,15 +10,15 @@ export default class User {
 
   // List of savingsgoals for user
   // savingsGoals = SavingsGoal;
-  savingsGoals = [];
+  savingGoals = [];
 
-  constructor(firstName, lastName, email, userName, password, savingsGoals) {
+  constructor(firstName, lastName, email, userName, password, savingGoals) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.userName = userName;
     this.password = password;
-    this.savingsGoals = savingsGoals;
+    this.savingGoals = savingGoals;
   }
 
   getFullName() {
@@ -40,8 +40,8 @@ export default class User {
     return this.password;
   }
 
-  getSavingsGoals() {
-    return this.savingsGoals;
+  getSavingGoals() {
+    return this.savingGoals;
   }
 
 }

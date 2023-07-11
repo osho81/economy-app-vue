@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ListUsers from '../views/ListUsers.vue'
+import UserGoals from '../views/UserGoals.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/listusers', // Temporary view; since users not allowed see other users
       name: 'listusers',
       component: ListUsers
+    },
+    {
+      path: '/usergoals',  
+      name: 'usergoals',
+      component: UserGoals
     },
   ]
 })
