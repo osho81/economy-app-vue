@@ -17,12 +17,19 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faInfoCircle, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faInfoCircle, faSortUp, faSortDown) // Register each new icon, to use elsewhere
- 
+
 
 const app = createApp(App) // App.vue
-.component('font-awesome-icon', FontAwesomeIcon) // Addedd for fontawsome 230709
+    .component('font-awesome-icon', FontAwesomeIcon) // Addedd for fontawsome 230709
 
 app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+// Added 230710 to solve "Property diplayDoalsDiv does not exist on type 'Window & typeof globalThis"
+declare global {
+    interface Window {
+        diplayGoalsDiv: any
+    }
+}

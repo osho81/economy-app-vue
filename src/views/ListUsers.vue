@@ -55,10 +55,10 @@ export default {
             })
 
             if (event) { // Optional if, but leave it here for now
-                window.diplaygoalsdiv.showModal();
+                window.diplayGoalsDiv.showModal(); // See global declaration in main ts
             }
 
-        
+
 
         }
     }
@@ -163,12 +163,24 @@ export default {
 
 
                 <!-- Open this modal in displayGoals method, after the method has populated it:  -->
-                <dialog id="diplaygoalsdiv" className="modal modal-bottom sm:modal-middle">
+                <dialog id="diplayGoalsDiv" className="modal modal-bottom sm:modal-middle">
                     <form method="dialog" className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Press ESC key or click the button below to close</p>
+                        <div v-if="selectedUser">
+                            <div v-for="SavingsGoal in selectedUser.savingGoals">
+                                <p className='p-0 m-0'> {{ SavingsGoal }} </p>
+                                <br>
+                                <p className='p-0 m-0'>----------------------------------------------------------</p>
+                                <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
+                            </div>
+                            <div v-if="selectedUser.savingGoals.length === 0">
+                                <p className='p-0 m-0'> Something went wrong, please try later </p>
+                                <br>
+                                <p className='p-0 m-0'>----------------------------------------------------------</p>
+                                <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
+                            </div>
+                        </div>
+
                         <div className="modal-action">
-                            <!-- if there is a button in form, it will close the modal: -->
                             <button className="btn">Close</button>
                         </div>
                     </form>
