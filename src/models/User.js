@@ -1,4 +1,6 @@
-export default class MyNameClass {
+import SavingsGoal from "./SavingsGoal";
+
+export default class User {
 
   firstName = "";
   lastName = "";
@@ -7,6 +9,7 @@ export default class MyNameClass {
   password = "";
 
   // List of savingsgoals for user
+  // savingsGoals = SavingsGoal;
   savingsGoals = [];
 
   constructor(firstName, lastName, email, userName, password, savingsGoals) {

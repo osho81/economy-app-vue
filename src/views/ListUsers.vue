@@ -6,9 +6,9 @@
 import { getUsers } from '@/service/userService.js';
 import type User from '@/models/User'; // Backend mirroring User
 import { ref } from 'vue';
+import type SavingsGoal from '@/models/SavingsGoal';
 
-
-const selectedUser = ref({}) // Control state
+const selectedUser = ref<User>(); // Control state
 
 // Get UsersList using export approach (i.e. instead of script setup)
 // & mounted() lifecycle hook
@@ -32,13 +32,29 @@ export default {
 
 
     methods: {
-        displayGoals: function (event) {
-            console.log("hiii");
-            alert(`Hello ${selectedUser.value}!`)
+        displayGoals: function (event) { // js
+            // alert(`Hello ${selectedUser.value}!`)
             // `event` is the native DOM event
-            if (event) {
-                alert(event.target.tagName)
-            }
+
+            this.usersList.map((user) => {
+                // console.log(user.userName);
+                // console.log(event.currentTarget.id);
+                if (user.userName === event.currentTarget.id) {
+                    console.log("Hit!");
+                    // selectedUser.value = Object.assign(user);
+                    selectedUser.value = user;
+                    console.log(typeof selectedUser);
+                    console.log(selectedUser);
+                    return selectedUser.value;
+                }
+
+            })
+
+            // if (event) {
+            //     console.log(event.currentTarget.id);
+            //     alert(event.currentTarget.tagName)
+            // }
+
         }
     }
 
@@ -86,6 +102,7 @@ export default {
                             </span>
                         </th>
                         <th>Actions</th>
+                        <th>GOALS</th>
                     </tr>
                 </thead>
 
@@ -106,13 +123,25 @@ export default {
                         <td className='p-0 m-0'> {{ user.email }} </td>
                         <td className='p-0 m-0'> {{ user.userName }} </td>
                         <td className='p-0 m-0'> {{ user.password }} </td>
-                        <td className='p-0 m-0'>
-                            <span className='user-detail-btn ml-4' id={user.id} @click="displayGoals">
-                                <font-awesome-icon icon="circle-info" size="2xl" />
+
+                        <!-- Add little padding at top of for action:   -->
+                        <td className='p-0 pt-1 m-0'>
+                            <span className='user-detail-btn ml-4' :id="user.userName" @click="displayGoals($event)">
+                                <font-awesome-icon icon="circle-info" size="xl" />
+
                             </span>
                         </td>
+
                     </tr>
 
+                    <!-- <div v-for="(SavingsGoal, i) in Object.entries(selectedUser.savingsGoals)" :key="i"> -->
+                    <!-- <div v-for="(SavingsGoal, i) in selectedUser" :key="i"> -->
+                    <!-- <div v-if="selectedUser">
+                        {{ console.log("I am in") }}
+                        <p className='p-0 m-0'> {{ SavingsGoal }} </p>
+                        <p className='p-0 m-0'> {{ SavingsGoal.currentAmountOfCash }} </p>
+                        <p className='p-0 m-0'> Yes! </p>
+                    </div> -->
 
 
                 </tbody>

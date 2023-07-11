@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const brandString: string = "EcApp";
+
+// Added to avoid "falltorough attributes"; see here: https://vuejs.org/guide/components/attrs.html#disabling-attribute-inheritance"
+defineOptions({
+  inheritAttrs: false
+})
 </script>
 
 <template>

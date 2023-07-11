@@ -10,8 +10,8 @@
             <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
             <div class="wrapper">
-                <!-- HelloWorld Component takes a prop  -->
-                <HelloWorld msg="Economy App!" />
+                <!-- HelloWorld Component takes a prop (this component is removed from project) -->
+                <!-- <HelloWorld msg="Economy App!" /> -->
 
                 <nav>
 

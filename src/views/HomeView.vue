@@ -5,19 +5,18 @@ import IntroInfo from '@/components/IntroInfo.vue';
 </script>
 
 <template>
-    <!-- Example of a View (page) using component:  -->
+  <!-- Example of a View (page) using component:  -->
 
-    <LoadingPage />
+  <LoadingPage />
 
-    <div class="div-main">
-    <IntroInfo  msg="Welcome To Economy App" />
+  <div class="div-main">
+    <IntroInfo msg="Welcome To Economy App" />
 
 
   </div>
 </template>
 
 <style>
-
 .div-main {
   align-items: center;
   margin-left: 25%;

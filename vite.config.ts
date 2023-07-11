@@ -7,7 +7,17 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue(
+      {
+        // Added 230710; see here:
+        // https://stackoverflow.com/questions/71601714/how-to-set-compileroptions-iscustomelement-for-vuejs-3-in-laravel-project
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => ['FontAwesomeIcon', "Link"].includes(tag),
+          }
+        }
+      }
+    ),
     vueJsx(),
   ],
   resolve: {
