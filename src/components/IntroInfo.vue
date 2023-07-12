@@ -8,13 +8,13 @@ defineProps<{ // Props/msg is sent in via App.vue
 <template>
   <div class="greetings">
     <h1 class="green text-2xl font-semibold mt-8 mb-6">{{ msg }}</h1>
-    <h3>
+    <p className="text-lg text-center">
       Welcome to the Economy App - 
       Start saving money today! You are just few clicks away! <br><br>
       Some of our customers:
       <a href="https:/burgerking.com/" target="_blank" rel="noopener">BK</a> &
       <a href="https://svt.se/" target="_blank" rel="noopener">SVT</a>
-    </h3>
+    </p>
   </div>
 </template>
 

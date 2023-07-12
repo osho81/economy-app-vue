@@ -116,14 +116,10 @@ export default {
                     <!-- Loop through fetched usersList and display in table:  -->
                     <tr v-for="(user, i) in usersList" :key="i">
                         <td className='p-0 m-0'>
-
                             <div className="font-semibold flex">
-                                <!-- <div className="font-semibold space-x-6"> {{user.firstName.toUpperCase() + "&emsp;&emsp;&emsp;&emsp; " + user.lastName.toUpperCase()}}</div> -->
                                 <div className="w-[40%]"> {{ user.firstName.toUpperCase() }}</div>
                                 <div> {{ user.lastName.toUpperCase() }}</div>
-
                             </div>
-
                         </td>
                         <td className='p-0 m-0'> {{ user.email }} </td>
                         <td className='p-0 m-0'> {{ user.userName }} </td>
@@ -137,46 +133,50 @@ export default {
 
                     </tr>
 
-
-
                 </tbody>
 
-                <!-- <div v-for="(SavingsGoal, i) in Object.entries(selectedUser.savingsGoals)" :key="i"> -->
-                <!-- <div v-for="(SavingsGoal, i) in selectedUser" :key="i"> -->
-                <!-- <div v-if="selectedUser">
-                    <p className='p-0 m-0'> Should go here: </p>
-                    <p className='p-0 m-0'> {{ selectedUser }} </p><br>
-                    <p className='p-0 m-0'>----------------------------------------------------------</p>
-                    <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
-                    <br>
-                    <p className='p-0 m-0'>----------------------------------------------------------</p>
 
-                    <div v-for="SavingsGoal in selectedUser.savingGoals">
-                        {{ console.log("OOOOOOOOOOOOOOK", selectedUser) }}
-                        <p className='p-0 m-0'> {{ SavingsGoal }} </p>
-                        <br>
-                        <p className='p-0 m-0'>----------------------------------------------------------</p>
-                        <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
-                        <p className='p-0 m-0'> Yes! </p>
-                    </div>
-                </div> -->
-
-
-                <!-- Open this modal in displayGoals method, after the method has populated it:  -->
+                <!-- Open this modal in displayGoals method, after the method has populated it  -->
+                <!-- selectedUser is object; selectedUser.SavingGoals is an array in this object   -->
                 <dialog id="diplayGoalsDiv" className="modal modal-bottom sm:modal-middle">
                     <form method="dialog" className="modal-box">
+                        <h2 className="text-center text-lg mb-2 font-bold">{{ selectedUser?.userName }}</h2>
                         <div v-if="selectedUser">
-                            <div v-for="SavingsGoal in selectedUser.savingGoals">
-                                <p className='p-0 m-0'> {{ SavingsGoal }} </p>
+                            <div v-for="savingsGoal in selectedUser.savingGoals">
                                 <br>
-                                <p className='p-0 m-0'>----------------------------------------------------------</p>
-                                <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
+                                <p className='p-0 mb-2 text-center font-semibold'>
+                                    --------- {{ savingsGoal.goalName }} ---------</p>
+                                <table className='table table-zebra text-xs'>
+                                    <tbody id='goal-details-table'>
+                                        <tr>
+                                            <td className='p-0 m-0'>Current cach amount</td>
+                                            <td className='p-0 m-0'> {{ savingsGoal.currentAmountOfCash }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td className='p-0 m-0'>Target cach amount</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.currentAmountOfCash }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='p-0 m-0'>Start date</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.startDate }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='p-0 m-0'>End date</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.endDate }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='p-0 m-0'>Creation date</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.createdAt }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className='p-0 m-0'>Last modification date</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.lastModified }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div v-if="selectedUser.savingGoals.length === 0">
-                                <p className='p-0 m-0'> Something went wrong, please try later </p>
-                                <br>
-                                <p className='p-0 m-0'>----------------------------------------------------------</p>
-                                <p className='p-0 m-0'> {{ selectedUser.savingGoals }} </p>
+                                <p className='p-8 m-4'> User has no saving-goals yet</p>
                             </div>
                         </div>
 

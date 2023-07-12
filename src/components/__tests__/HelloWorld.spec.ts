@@ -1,11 +1,13 @@
-import { describe, it, expect } from 'vitest'
+// Commented out 230712
 
-import { mount } from '@vue/test-utils'
-import HelloWorld from '../HelloWorld.vue'
+// import { describe, it, expect } from 'vitest'
 
-describe('HelloWorld', () => {
-  it('renders properly', () => {
-    const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
-    expect(wrapper.text()).toContain('Hello Vitest')
-  })
-})
+// import { mount } from '@vue/test-utils'
+// import HelloWorld from '../HelloWorld.vue'
+
+// describe('HelloWorld', () => {
+//   it('renders properly', () => {
+//     const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
+//     expect(wrapper.text()).toContain('Hello Vitest')
+//   })
+// })

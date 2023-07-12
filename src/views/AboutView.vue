@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import '../assets/main.css'
-import LoadingPage from '@/components/LoadingPage.vue';
+import LoadingPageBtns from '@/components/LoadingPageBtns.vue';
 </script>
 
 <template>
   <div class="div-main">
-    <LoadingPage />
+    <LoadingPageBtns />
 
     <div>
       <h2 className="green text-3xl font-semibold mt-8 mb-6 text-center">About us</h2>
-      <p>We have been helping people save money since 1997. Call or email us at any time!</p>
+      <p className="text-lg text-center">We have been helping people save money since 1997. Call or email us at any time!</p>
     </div>
 
   </div>

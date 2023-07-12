@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import '../assets/main.css'
-import LoadingPage from '@/components/LoadingPage.vue';
+import LoadingPageBtns from '@/components/LoadingPageBtns.vue';
 import IntroInfo from '@/components/IntroInfo.vue';
 </script>
 
 <template>
   <!-- Example of a View (page) using component:  -->
 
-  <LoadingPage />
+  <LoadingPageBtns />
 
   <div class="div-main">
     <IntroInfo msg="Welcome To Economy App" />
