@@ -1,4 +1,3 @@
-import SavingsGoal from "./SavingsGoal";
 
 export default class User {
 

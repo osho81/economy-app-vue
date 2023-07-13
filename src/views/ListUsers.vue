@@ -6,7 +6,6 @@
 import { getUsers } from '@/service/userService.js';
 import type User from '@/models/User'; // Backend mirroring User
 import { ref } from 'vue';
-import type SavingsGoal from '@/models/SavingsGoal';
 
 // const selectedUser = ref<User>(); // Control state
 
@@ -107,7 +106,6 @@ export default {
                             </span>
                         </th>
                         <th>Actions</th>
-                        <th>GOALS</th>
                     </tr>
                 </thead>
 
@@ -124,10 +122,12 @@ export default {
                         <td className='p-0 m-0'> {{ user.email }} </td>
                         <td className='p-0 m-0'> {{ user.userName }} </td>
                         <td className='p-0 m-0'> {{ user.password }} </td>
-                        <td className='p-0 pb-2 m-0'>
+                        <td className='flex p-0 pb-2 m-0'>
                             <span className='user-detail-btn ml-4' :id="user.userName" @click="displayGoals($event)">
                                 <font-awesome-icon icon="circle-info" size="xl" />
-
+                            </span>
+                            <span className='edit-user-btn ml-4' :id="user.userName" @click="editUser($event)">
+                                <font-awesome-icon icon="pen-to-square" size="xl" />
                             </span>
                         </td>
 

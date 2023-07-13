@@ -14,9 +14,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
-import { faInfoCircle, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle, faSortUp, faSortDown, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
-library.add(faInfoCircle, faSortUp, faSortDown) // Register each new icon, to use elsewhere
+library.add(faInfoCircle, faSortUp, faSortDown, faPenToSquare) // Register each new icon, to use elsewhere
 
 
 const app = createApp(App) // App.vue
