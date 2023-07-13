@@ -1,7 +1,16 @@
 <script setup lang="ts">
 
-// This view is to be renamed or deleted, since userGoals is shown in ListUsers
+// Props/msg is sent in via App.vue or other routing
+// In this case, props is sent in router.push... from ListUsers
+defineProps<{ // TS syntax
+  username: string
+}>()
 
 </script> 
-<template></template> 
-<style scoped></style>
+
+<template>
+    <p>Hellooo {{ username }}</p>
+</template> 
+
+<style scoped>
+</style>
