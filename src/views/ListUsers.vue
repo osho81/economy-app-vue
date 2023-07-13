@@ -9,6 +9,8 @@ import { ref } from 'vue';
 
 // const selectedUser = ref<User>(); // Control state
 
+import router from '@/router';
+
 // Get UsersList using export approach (i.e. instead of script setup)
 // & mounted() lifecycle hook
 export default {
@@ -18,7 +20,6 @@ export default {
         let usersList: User[] = []; // Use backend-mirroring User model 
 
         let selectedUser = ref<User>(); // Control state
-
 
         return { usersList, selectedUser } // This is exported to template (html component)
 
@@ -41,7 +42,7 @@ export default {
             this.usersList.map((user) => {
                 // console.log(user.userName);
                 // console.log(event.currentTarget.id);
-                if (user.userName === event.currentTarget.id) {
+                if (user.userName === event.currentTarget.id) { // btn id is set to userName
                     console.log("Hit!");
                     // selectedUser.value = Object.assign(user);
                     // selectedUser.value = user; // ref approach
@@ -53,12 +54,18 @@ export default {
 
             })
 
-            if (event) { // Optional if, but leave it here for now
+            if (event) { // Optional if part, but leave it here for now
                 window.diplayGoalsDiv.showModal(); // See global declaration in main ts
             }
+        },
 
-
-
+        editUser: function (event) {
+            // router.push("/edituser");
+            // Use programmatic navigation with props, to be sent to recieving component
+            const username1 = event.currentTarget.id;
+            console.log(username1);
+            // router.push({ name: 'edituser', params: { username: username1 } })
+            router.push({ name: 'edituser', params: { username: username1 } })
         }
     }
 
@@ -124,10 +131,10 @@ export default {
                         <td className='p-0 m-0'> {{ user.password }} </td>
                         <td className='flex p-0 pb-2 m-0'>
                             <span className='user-detail-btn ml-4' :id="user.userName" @click="displayGoals($event)">
-                                <font-awesome-icon icon="circle-info" size="xl" />
+                                <font-awesome-icon icon="circle-info" size="xl" color="green"/>
                             </span>
                             <span className='edit-user-btn ml-4' :id="user.userName" @click="editUser($event)">
-                                <font-awesome-icon icon="pen-to-square" size="xl" />
+                                <font-awesome-icon icon="pen-to-square" size="xl" color="#58d613"/>
                             </span>
                         </td>
 
@@ -214,4 +221,8 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.green-color {
+    color: green !important;
+}
 </style>

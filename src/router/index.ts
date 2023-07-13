@@ -25,9 +25,10 @@ const router = createRouter({
       component: ListUsers
     },
     {
-      path: '/edituser',  
+      path: '/edituser/:username',  
       name: 'edituser',
-      component: EditUser
+      component: EditUser, 
+      props: true // Enabling props in navigation, see ListUsers editUser method 
     },
   ]
 })

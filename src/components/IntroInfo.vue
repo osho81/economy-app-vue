@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-defineProps<{ // Props/msg is sent in via App.vue
+defineProps<{ // Props/msg is sent in via HomeView
   msg: string
 }>()
 </script>
