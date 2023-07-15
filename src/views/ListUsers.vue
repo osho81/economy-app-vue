@@ -62,10 +62,10 @@ export default {
         editUser: function (event) {
             // router.push("/edituser");
             // Use programmatic navigation with props, to be sent to recieving component
-            const username1 = event.currentTarget.id;
-            console.log(username1);
+            const usernameValue = event.currentTarget.id;
+            console.log(usernameValue);
             // router.push({ name: 'edituser', params: { username: username1 } })
-            router.push({ name: 'edituser', params: { username: username1 } })
+            router.push({ name: 'edituser', params: { username: usernameValue } })
         }
     }
 
