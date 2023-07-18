@@ -2,44 +2,64 @@
 
 // Props/msg is sent in via App.vue or other routing
 // In this case, props is sent in router.push... from ListUsers
-defineProps<{ // TS syntax
-    username: string
-}>()
+// defineProps<{ // TS syntax
+//     username: String
+// }>()
+const props = defineProps({
+    username: String
+})
+
 
 import router from '@/router';
 
 import type User from '@/models/User';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { getByUsername } from '@/service/userService';
 
+// Approach with script setup, without export default syntax
+
+const initialUsername = ref(props.username); // Set initial username string
 const selectedUser = ref<User>(); // Control state
-const firstNameVal = ref(); // Control state
 
-
-getByUsername("johndoe").then((response) => {
+getByUsername(initialUsername.value).then((response) => { // Use initial username string from ref-VALUE
     console.log(response);
     selectedUser.value = response;
 })
 
 
-const handleFirstName = (event) => {
-    const firstNameValue = event.currentTarget.value;
-    firstNameVal.value = firstNameValue;
-    console.log(firstNameValue); // Prints out current target value
-    console.log(firstNameVal.value); // Prints out current state of firstName ref value
+// Handle inputs
+const firstNameVal = ref(); // use values for submit method
+const lastNameVal = ref();
+
+const handleFirstName = (event: any) => {
+    const currentInput = event.currentTarget.value;
+    firstNameVal.value = currentInput;
+    // console.log(firstNameVal.value); // Prints out current state of firstName ref value
+
+}
+const handleLastName = (event: any) => {
+    const currentInput = event.currentTarget.value;
+    lastNameVal.value = currentInput;
+    // console.log(lastNameVal.value); // Prints out current state of firstName ref value
+}
+const handleEmail = (event: any) => {
+    const currentInput = event.currentTarget.value;
+    lastNameVal.value = currentInput;
+    // console.log(lastNameVal.value); // Prints out current state of firstName ref value
 
 }
 
-const submitEditUser = (event) => {
-    // A service method to post/put user
-} 
+const submitEditUser = (event: any) => { // Event not necessary
+    console.log(firstNameVal.value);
+    console.log(lastNameVal.value);
+}
 
 
 </script> 
 
 <template>
-    <div class="p-8 ml-[20%] w-[60%]">
-        <h2 class="text-center font-bold text-lg">Edit user fields</h2>
+    <div class="p-8 ml-[30%] w-[40%]">
+        <h2 class="text-center font-bold text-lg">Edit user fields for {{ selectedUser?.userName }}</h2>
         <table className='table text-base space-x-4'>
             <tbody id='goal-details-table'>
                 <tr>
@@ -54,7 +74,8 @@ const submitEditUser = (event) => {
                     <td className='pb-4 m-0'>Last name </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text" :placeholder="selectedUser?.lastName"
-                            className="input input-sm input-bordered w-full max-w-xs font-semibold text-right" />
+                            className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
+                            @input="handleLastName($event)" />
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +89,8 @@ const submitEditUser = (event) => {
                     <td className='pb-4 m-0'>Email </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text" :placeholder="selectedUser?.email"
-                            className="input input-sm input-bordered w-full max-w-xs font-semibold text-right" />
+                            className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
+                            @input="handleEmail($event)" />
                     </td>
                 </tr>
                 <tr>
@@ -83,7 +105,7 @@ const submitEditUser = (event) => {
 
         <div className="flex justify-center items-center p-5">
             <button className="btn mr-4" @click="router.go(-1)">Cancel</button>
-            <button id={selectedOrder.id} className="btn btn-outline" @click={submitEditUser}>Edit</button>
+            <button id={selectedUser.userName} className="btn btn-outline" @click="submitEditUser($event)">Edit</button>
         </div>
     </div>
 </template> 

@@ -147,7 +147,7 @@ export default {
                 <!-- selectedUser is object; selectedUser.SavingGoals is an array in this object   -->
                 <dialog id="diplayGoalsDiv" className="modal modal-bottom sm:modal-middle">
                     <form method="dialog" className="modal-box">
-                        <h2 className="text-center text-lg mb-2 font-bold">{{ selectedUser?.userName }}</h2>
+                        <h2 className="text-center text-lg mb-2 font-bold">Saving goals for {{ selectedUser?.userName }}</h2>
                         <div v-if="selectedUser">
                             <div v-for="savingsGoal in selectedUser.savingGoals">
                                 <br>
