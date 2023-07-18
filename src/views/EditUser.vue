@@ -14,7 +14,7 @@ import router from '@/router';
 
 import type User from '@/models/User';
 import { onMounted, ref } from 'vue';
-import { getByUsername } from '@/service/userService';
+import { getByUsername, updateUser } from '@/service/userService';
 
 // Approach with script setup, without export default syntax
 
@@ -30,28 +30,41 @@ getByUsername(initialUsername.value).then((response) => { // Use initial usernam
 // Handle inputs
 const firstNameVal = ref(); // use values for submit method
 const lastNameVal = ref();
+const emailVal = ref();
+const passwordVal = ref();
 
 const handleFirstName = (event: any) => {
     const currentInput = event.currentTarget.value;
     firstNameVal.value = currentInput;
     // console.log(firstNameVal.value); // Prints out current state of firstName ref value
-
 }
 const handleLastName = (event: any) => {
     const currentInput = event.currentTarget.value;
     lastNameVal.value = currentInput;
-    // console.log(lastNameVal.value); // Prints out current state of firstName ref value
+    // console.log(lastNameVal.value); 
 }
 const handleEmail = (event: any) => {
     const currentInput = event.currentTarget.value;
-    lastNameVal.value = currentInput;
-    // console.log(lastNameVal.value); // Prints out current state of firstName ref value
-
+    emailVal.value = currentInput;
+    // console.log(emailVal.value); 
 }
 
 const submitEditUser = (event: any) => { // Event not necessary
     console.log(firstNameVal.value);
     console.log(lastNameVal.value);
+    console.log(emailVal.value);
+
+    const currentUsername = event.currentTarget.id; // id is set to selectedUser username
+    console.log(currentUsername);
+
+
+    let userToUpdate = { id: 2, firstName: firstNameVal.value, lastName: lastNameVal.value, 
+        userName: currentUsername, email: emailVal.value }; // keep password as is in backend
+
+    updateUser(userToUpdate).then((response) => {  
+        // console.log(response);
+    })
+
 }
 
 
@@ -96,7 +109,7 @@ const submitEditUser = (event: any) => { // Event not necessary
                 <tr>
                     <td className='pb-4 m-0'>Password </td>
                     <td className='p-0 m-0 text-right'>
-                        <input type="text" :placeholder="selectedUser?.password"
+                        <input disabled type="text" :placeholder="selectedUser?.password"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right" />
                     </td>
                 </tr>
@@ -105,7 +118,7 @@ const submitEditUser = (event: any) => { // Event not necessary
 
         <div className="flex justify-center items-center p-5">
             <button className="btn mr-4" @click="router.go(-1)">Cancel</button>
-            <button id={selectedUser.userName} className="btn btn-outline" @click="submitEditUser($event)">Edit</button>
+            <button :id="selectedUser?.userName" className="btn btn-outline" @click="submitEditUser($event)">Edit</button>
         </div>
     </div>
 </template> 
