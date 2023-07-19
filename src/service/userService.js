@@ -14,6 +14,12 @@ export async function getByUsername(username) {
     return response.data;
 }
 
+export async function createUser(userToCreate) {
+    const response = await axios.post(baseUrl + "/users", userToCreate);
+    console.log(response.data);
+    return response.data;
+}
+
 export async function updateUser(userToUpdate) {
     const response = await axios.put(baseUrl + "/users", userToUpdate);
     console.log(response.data);
@@ -21,5 +27,11 @@ export async function updateUser(userToUpdate) {
 
     // return axios.put(baseUrl + "/users", userToUpdate); // Shorter vertion
 
+}
+
+export async function delUser(userId) {
+    const response = await axios.delete(baseUrl + "/users/" + userId);
+    console.log(response.data);
+    return response.data;
 }
 

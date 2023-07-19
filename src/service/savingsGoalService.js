@@ -14,3 +14,10 @@ export async function createSavingsGoal(savingsGoalToCreate) {
     return response.data;
 }
 
+
+export async function delSavingsGoal(goalId) {
+    const response = await axios.delete(baseUrl + "/savings-goals/" + goalId);
+    console.log(response.data);
+    return response.data;
+}
+

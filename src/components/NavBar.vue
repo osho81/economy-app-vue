@@ -37,14 +37,14 @@ defineOptions({
                             <li>
                                 <RouterLink to="/addsavingsgoal">Savingsgoal</RouterLink>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <Link to="/item3">Item 3</Link>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <RouterLink className="font-base" to="/somewhere">Something</RouterLink>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <RouterLink to="/" className="brand-router-link font-bold text-2xl">{{ brandString }}</RouterLink>
@@ -68,15 +68,15 @@ defineOptions({
                             <li>
                                 <RouterLink to="/addsavingsgoal">Savingsgoal</RouterLink>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <Link to="/item3">Item 3</Link>
-                            </li>
+                            </li> -->
                         </ul>
                     </details>
                 </li>
-                <li>
+                <!-- <li>
                     <RouterLink to="/somewhere">Something</RouterLink>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div className="navbar-end">

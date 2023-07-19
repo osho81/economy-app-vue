@@ -3,7 +3,8 @@
 
 // Syntax for import ts is slightly different; quick Z_FIXED, ts-ignore: 
 // @ts-ignore
-import { getUsers } from '@/service/userService.js';
+import { getUsers, delUser } from '@/service/userService.js';
+import { delSavingsGoal } from '@/service/savingsGoalService.js';
 import type User from '@/models/User'; // Backend mirroring User
 import { ref } from 'vue';
 
@@ -25,12 +26,11 @@ export default {
 
     },
     mounted() {
-        getUsers()
-            .then((response) => { // gets response.data from service getUsers
-                this.usersList = response;
-                // usersList1 = response;
-                console.log(response);
-            })
+        getUsers().then((response) => { // gets response.data from service getUsers
+            this.usersList = response;
+            // usersList1 = response;
+            console.log(response);
+        })
     },
 
 
@@ -40,15 +40,10 @@ export default {
             // `event` is the native DOM event
 
             this.usersList.map((user) => {
-                // console.log(user.userName);
-                // console.log(event.currentTarget.id);
                 if (user.userName === event.currentTarget.id) { // btn id is set to userName
-                    console.log("Hit!");
                     // selectedUser.value = Object.assign(user);
                     // selectedUser.value = user; // ref approach
                     this.selectedUser = user; // data() approach
-                    console.log(typeof this.selectedUser);
-                    console.log(this.selectedUser);
                     // return selectedUser.value; // ref approach?
                 }
 
@@ -66,7 +61,42 @@ export default {
             console.log(usernameValue);
             // router.push({ name: 'edituser', params: { username: username1 } })
             router.push({ name: 'edituser', params: { username: usernameValue } })
-        }
+        },
+
+        deleteUser: function (event) {
+            delUser(event.currentTarget.id).then((response) => { // Btn id is set to user id
+                console.log(response);
+
+                // Reload new data() content, i.e. update userslist
+                getUsers().then((response) => { // gets response.data from service getUsers
+                    console.log("get users list");
+                    this.usersList = response;
+                })
+            })
+
+            // this.forcesUpdateView(); // In case need to force-update view
+        },
+
+        deleteSavingsGoal: function (event) {
+            delSavingsGoal(event.currentTarget.id).then((response) => { // Btn id is set to user id
+                console.log(response);
+
+                // Reload new data() content, i.e. update userslist
+                getUsers().then((response) => { // gets response.data from service getUsers
+                    console.log("get users list");
+                    this.usersList = response;
+
+                    // Update displayGoals data() as wel; the display goal view will re-render
+                    this.usersList.map((user) => {
+                        if (user.id === this.selectedUser?.id) {
+                            this.selectedUser = user;
+                        }
+                    })
+
+                })
+            })
+
+        },
     }
 
 
@@ -131,10 +161,13 @@ export default {
                         <td className='p-0 m-0'> {{ user.password }} </td>
                         <td className='flex p-0 pb-2 m-0'>
                             <span className='user-detail-btn ml-4' :id="user.userName" @click="displayGoals($event)">
-                                <font-awesome-icon icon="circle-info" size="xl" color="green"/>
+                                <font-awesome-icon icon="circle-info" size="xl" color="green" />
                             </span>
                             <span className='edit-user-btn ml-4' :id="user.userName" @click="editUser($event)">
-                                <font-awesome-icon icon="pen-to-square" size="xl" color="#58d613"/>
+                                <font-awesome-icon icon="pen-to-square" size="xl" color="#58d613" />
+                            </span>
+                            <span className='delete-user-btn ml-4' :id="user.id" @click="deleteUser($event)">
+                                <font-awesome-icon icon="trash" size="xl" color="#e34444" />
                             </span>
                         </td>
 
@@ -147,7 +180,8 @@ export default {
                 <!-- selectedUser is object; selectedUser.SavingGoals is an array in this object   -->
                 <dialog id="diplayGoalsDiv" className="modal modal-bottom sm:modal-middle">
                     <form method="dialog" className="modal-box">
-                        <h2 className="text-center text-lg mb-2 font-bold">Saving goals for {{ selectedUser?.userName }}</h2>
+                        <h2 className="text-center text-lg mb-2 font-bold">Saving goals for {{ selectedUser?.userName }}
+                        </h2>
                         <div v-if="selectedUser">
                             <div v-for="savingsGoal in selectedUser.savingGoals">
                                 <br>
@@ -161,7 +195,7 @@ export default {
                                         </tr>
                                         <tr>
                                             <td className='p-0 m-0'>Target cach amount</td>
-                                            <td className='p-0 m-0'>{{ savingsGoal.currentAmountOfCash }}</td>
+                                            <td className='p-0 m-0'>{{ savingsGoal.targetAmountOfCash }}</td>
                                         </tr>
                                         <tr>
                                             <td className='p-0 m-0'>Start date</td>
@@ -181,7 +215,14 @@ export default {
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div className="flex justify-end pr-10 pt-2">
+                                    <span className='delete-goal-btn' :id="savingsGoal.id"
+                                        @click="deleteSavingsGoal($event)">
+                                        <font-awesome-icon icon="trash" size="xl" color="#e34444" />
+                                    </span>
+                                </div>
                             </div>
+
                             <div v-if="selectedUser.savingGoals.length === 0">
                                 <p className='p-8 m-4'> User has no saving-goals yet</p>
                             </div>

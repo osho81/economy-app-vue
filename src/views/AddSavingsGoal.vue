@@ -45,12 +45,13 @@ const handleUserId = (event: any) => {
 
 const submitCreateSavingsGoal = (event: any) => { // Event not necessary
 
-    if ((savingGoalNameVal.value == null || "") || currentAmountVal.value == null ||
-        targetAmountVal.value == null || startDateVal.value == null
+    if (savingGoalNameVal.value == null || currentAmountVal.value == null
+        || targetAmountVal.value == null || startDateVal.value == null
         || endDateVal.value == null || userIdVal.value == null) {
 
         alert("Please fill in all fields");
     } else {
+        console.log(targetAmountVal.value);
         let savingGoalToCreate = {
             goalName: savingGoalNameVal.value,
             currentAmountOfCash: currentAmountVal.value,
@@ -65,7 +66,7 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary
         })
         // Go back a step in routing. go to user list or elsewhere
         // router.go(-1);
-        router.push('/listusers')
+        router.push('/listusers');
     }
 
 }
