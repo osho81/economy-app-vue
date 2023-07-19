@@ -3,7 +3,7 @@ const brandString: string = "EcApp";
 
 // Added to avoid "falltorough attributes"; see here: https://vuejs.org/guide/components/attrs.html#disabling-attribute-inheritance"
 defineOptions({
-  inheritAttrs: false
+    inheritAttrs: false
 })
 </script>
 
@@ -26,16 +26,16 @@ defineOptions({
                 </label>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <li>
-                        <RouterLink to="/listusers" className="font-semibold text-sm active:text-sm" >List users</RouterLink>
+                        <RouterLink to="/listusers" className="font-semibold text-sm active:text-sm">List users</RouterLink>
                     </li>
                     <li>
-                        <a>All items</a>
+                        <a>Create</a>
                         <ul className="p-2">
                             <li>
-                                <Link to="/item1">Item 1</Link>
+                                <RouterLink to="/adduser">User</RouterLink>
                             </li>
                             <li>
-                                <Link to="/item2">Item 2</Link>
+                                <RouterLink to="/addsavingsgoal">Savingsgoal</RouterLink>
                             </li>
                             <li>
                                 <Link to="/item3">Item 3</Link>
@@ -43,7 +43,7 @@ defineOptions({
                         </ul>
                     </li>
                     <li>
-                        <Link to="/myorders">Stuff</Link>
+                        <RouterLink className="font-base" to="/somewhere">Something</RouterLink>
                     </li>
                 </ul>
             </div>
@@ -59,14 +59,14 @@ defineOptions({
                 </li>
                 <li tabIndex={0}>
                     <details className='dropdown'>
-                        <summary>All items</summary>
+                        <summary>Create</summary>
                         <!-- {/* decrease vertical space between list items: */} -->
                         <ul className="flex flex-col space-y-[-5px]" :style="{ zIndex: '1' }">
                             <li>
-                                <Link to="/item1">Item 1</Link>
+                                <RouterLink to="/adduser">User</RouterLink>
                             </li>
                             <li>
-                                <Link to="/item2">Item 2</Link>
+                                <RouterLink to="/addsavingsgoal">Savingsgoal</RouterLink>
                             </li>
                             <li>
                                 <Link to="/item3">Item 3</Link>
@@ -75,7 +75,7 @@ defineOptions({
                     </details>
                 </li>
                 <li>
-                    <Link to="/myorders">Stuff</Link>
+                    <RouterLink to="/somewhere">Something</RouterLink>
                 </li>
             </ul>
         </div>
@@ -118,17 +118,15 @@ hr {
 
 /* Visibility, hidden in small screen and visible brandname in medium screen, not working in tailwind */
 @media only screen and (max-width: 700px) {
-  .brand-router-link {
-    visibility: hidden !important;
-  }
+    .brand-router-link {
+        visibility: hidden !important;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
-  .brand-router-link {
-    margin-left: 5% !important;
-  }
+    .brand-router-link {
+        margin-left: 5% !important;
+    }
 }
-
-
 </style>
   

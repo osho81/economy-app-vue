@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ListUsers from '../views/ListUsers.vue'
 import EditUser from '../views/EditUser.vue'
+import AddUser from '../views/AddUser.vue'
+import AddSavingsGoal from '../views/AddSavingsGoal.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,10 +27,22 @@ const router = createRouter({
       component: ListUsers
     },
     {
-      path: '/edituser/:username',  
+      path: '/edituser/:username',
       name: 'edituser',
-      component: EditUser, 
+      component: EditUser,
       props: true // Enabling props in navigation, see ListUsers editUser method 
+    },
+    {
+      path: '/adduser',
+      name: 'adduser',
+      component: AddUser,
+      props: true // Remove if not needed for this route/component
+    },
+    {
+      path: '/addsavingsgoal',
+      name: 'addsavingsgoal',
+      component: AddSavingsGoal,
+      props: true // Remove if not needed for this route/component
     },
   ]
 })

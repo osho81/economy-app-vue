@@ -1,6 +1,7 @@
 
 export default class User {
 
+  id; 
   firstName = "";
   lastName = "";
   email = "";
@@ -8,10 +9,10 @@ export default class User {
   password = "";
 
   // List of savingsgoals for user
-  // savingsGoals = SavingsGoal;
   savingGoals = [];
 
-  constructor(firstName, lastName, email, userName, password, savingGoals) {
+  constructor(id, firstName, lastName, email, userName, password, savingGoals) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -20,6 +21,9 @@ export default class User {
     this.savingGoals = savingGoals;
   }
 
+  getId() {
+    return this.id;
+  }
   getFullName() {
     return this.firstName + ' ' + this.lastName;
   }
