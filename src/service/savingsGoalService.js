@@ -15,6 +15,7 @@ export async function createSavingsGoal(savingsGoalToCreate) {
 }
 
 //TODO: ADD UPDATE SERVICE METHOD
+// Adjust backend endpoint if needed
 
 
 export async function delSavingsGoal(goalId) {
