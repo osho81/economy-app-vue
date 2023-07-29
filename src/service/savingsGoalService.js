@@ -14,10 +14,14 @@ export async function createSavingsGoal(savingsGoalToCreate) {
     return response.data;
 }
 
+//TODO: ADD UPDATE SERVICE METHOD
+
 
 export async function delSavingsGoal(goalId) {
     const response = await axios.delete(baseUrl + "/savings-goals/" + goalId);
     console.log(response.data);
     return response.data;
 }
+
+
 
