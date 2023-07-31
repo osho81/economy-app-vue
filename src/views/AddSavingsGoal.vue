@@ -108,7 +108,7 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary
             <input type="date" @input=handleEndDate($event) className="input input-sm input-bordered w-full max-w-xs" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Target amount: </span>
+                <span className="label-text text-sm font-semibold">User ID: </span>
             </label>
             <input type="number" placeholder="0" @input=handleUserId($event)
                 className="input input-sm input-bordered w-full max-w-xs" />
@@ -116,7 +116,7 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary
         </div>
         <div className="flex justify-center items-center p-5">
             <button className="btn btn-outline mr-4" @click="router.go(-1)">Cancel</button>
-            <button className="btn btn-outline" @click=submitCreateSavingsGoal($event)>Rent</button>
+            <button className="btn btn-outline" @click=submitCreateSavingsGoal($event)>Done</button>
         </div>
 
     </div>

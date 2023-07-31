@@ -108,7 +108,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
 
         <div className="flex justify-center items-center p-5">
             <button className="btn btn-outline mr-4" @click="router.go(-1)">Cancel</button>
-            <button className="btn btn-outline" @click="submitCreateUser($event)">Edit</button>
+            <button className="btn btn-outline" @click="submitCreateUser($event)">Save</button>
         </div>
     </div>
 </template>
