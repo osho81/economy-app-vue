@@ -5,6 +5,8 @@ import EditUser from '../views/EditUser.vue'
 import AddUser from '../views/AddUser.vue'
 import AddSavingsGoal from '../views/AddSavingsGoal.vue'
 
+// These pages/contents will be displayed, since this is set in App.vue
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
