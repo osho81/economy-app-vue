@@ -9,7 +9,7 @@ import NavBar from './components/NavBar.vue';
   <!-- My customized nav bar: -->
   <NavBar className="navbar" />
 
-  <!-- Router view displays in accordance with index.ts in router folder -->
+  <!-- Router view displays contant in accordance with index.ts in router folder -->
   <RouterView />
 </template>
 
