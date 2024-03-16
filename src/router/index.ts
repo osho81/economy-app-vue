@@ -4,6 +4,7 @@ import ListUsers from '../views/ListUsers.vue'
 import EditUser from '../views/EditUser.vue'
 import AddUser from '../views/AddUser.vue'
 import AddSavingsGoal from '../views/AddSavingsGoal.vue'
+import ListSavingsGoals from '@/views/ListSavingsGoals.vue'
 
 // These pages/contents will be displayed, since this is set in App.vue
 
@@ -39,6 +40,11 @@ const router = createRouter({
       name: 'adduser',
       component: AddUser,
       props: true // Remove if not needed for this route/component
+    },
+    {
+      path: '/listsavingsgoals', // Temporary view; since users not allowed see other users
+      name: 'listsavingsgoals',
+      component: ListSavingsGoals
     },
     {
       path: '/addsavingsgoal',

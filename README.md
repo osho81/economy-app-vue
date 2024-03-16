@@ -1,6 +1,7 @@
 # economy-app-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+This vue app is to practise on vue.
+Backend is economy-app
 
 ## Recommended IDE Setup
 

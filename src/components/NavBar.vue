@@ -29,6 +29,9 @@ defineOptions({
                         <RouterLink to="/listusers" className="font-semibold text-sm active:text-sm">List users</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/listsavingsgoals" className="font-semibold text-sm active:text-sm">List savings-goals</RouterLink>
+                    </li>
+                    <li>
                         <a>Create</a>
                         <ul className="p-2">
                             <li>
@@ -37,9 +40,6 @@ defineOptions({
                             <li>
                                 <RouterLink to="/addsavingsgoal">Savingsgoal</RouterLink>
                             </li>
-                            <!-- <li>
-                                <Link to="/item3">Item 3</Link>
-                            </li> -->
                         </ul>
                     </li>
                     <!-- <li>
