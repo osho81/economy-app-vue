@@ -24,12 +24,13 @@ defineOptions({
                             416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
                     </svg>
                 </label>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-152">
                     <li>
                         <RouterLink to="/listusers" className="font-semibold text-sm active:text-sm">List users</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/listsavingsgoals" className="font-semibold text-sm active:text-sm">List savings-goals</RouterLink>
+                        <RouterLink to="/listsavingsgoals" className="font-semibold text-sm active:text-sm">List
+                            savegoals</RouterLink>
                     </li>
                     <li>
                         <a>Create</a>
@@ -56,6 +57,9 @@ defineOptions({
                 <!-- {/* change a tags into react router links/navlinks */} -->
                 <li>
                     <RouterLink className="font-base" to="/listusers">List users</RouterLink>
+                </li>
+                <li>
+                    <RouterLink className="font-base" to="/listsavingsgoals">List savegoals</RouterLink>
                 </li>
                 <li tabIndex={0}>
                     <details className='dropdown'>
