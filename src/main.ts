@@ -20,11 +20,14 @@ library.add(faInfoCircle, faSortUp, faSortDown, faPenToSquare, faTrash) // Regis
 
 
 const app = createApp(App) // App.vue
-    .component('font-awesome-icon', FontAwesomeIcon) // Addedd for fontawsome 230709
+    // .component('font-awesome-icon', FontAwesomeIcon) // Addedd for fontawsome 230709
 
+// Add additional features/plugins to the application
+app.component('font-awesome-icon', FontAwesomeIcon) // Addedd for fontawsome 230709
 app.use(createPinia())
 app.use(router)
 
+// Mount app, with selected root component (#app which is itself; and it renders App.vue as set above)
 app.mount('#app')
 
 // Added 230710 to solve "Property diplayDoalsDiv does not exist on type 'Window & typeof globalThis"

@@ -1,5 +1,6 @@
 <script lang="ts">
 // Note: no script setup in this file
+// Options api; for composition api, see ListSavingsGoals
 
 // Syntax for import ts is slightly different; quick Z_FIXED, ts-ignore: 
 // @ts-ignore
@@ -34,6 +35,7 @@ export default {
     },
 
 
+    //---- Methods triggered by (click) events ----//
     methods: {
         displayGoals: function (event) { // js
             // alert(`Hello ${selectedUser.value}!`)

@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import { createSavingsGoal } from '@/service/savingsGoalService';
 
 // Handle inputs
-const savingGoalNameVal = ref(); // use values for submit method
+const savingGoalNameVal = ref(); // use values in submit method
 const currentAmountVal = ref();
 const targetAmountVal = ref();
 const startDateVal = ref();
