@@ -98,12 +98,12 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary
                 className="input input-sm input-bordered w-full max-w-xs" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Return date: </span>
+                <span className="label-text text-sm font-semibold">Start date: </span>
             </label>
             <input type="date" @input=handleStartDate($event) className="input input-sm input-bordered w-full max-w-xs" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Return date: </span>
+                <span className="label-text text-sm font-semibold">End date: </span>
             </label>
             <input type="date" @input=handleEndDate($event) className="input input-sm input-bordered w-full max-w-xs" />
 
