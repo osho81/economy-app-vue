@@ -1,5 +1,5 @@
 export default class SavingsGoal {
-// Class mirroring entity savingsGoal in backend (Economy-app)
+// Class mirroring savingsGoal entity in backend (Economy-app)
 
   id;
   goalName = "";

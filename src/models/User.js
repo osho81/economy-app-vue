@@ -1,5 +1,5 @@
-
 export default class User {
+// Class mirroring  User entity in backend (Economy-app)
 
   id; 
   firstName = "";
