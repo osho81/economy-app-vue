@@ -11,6 +11,9 @@ import { ref } from 'vue';
 
 // const selectedUser = ref<User>(); // Control state
 
+
+// TODO: sortTable is not implemented
+
 import router from '@/router';
 
 // Get UsersList using export approach (i.e. instead of script setup)
@@ -30,7 +33,7 @@ export default {
         getUsers().then((response) => { // gets response.data from service getUsers
             this.usersList = response;
             // usersList1 = response;
-            console.log(response);
+            // console.log(response);
         })
     },
 
@@ -60,7 +63,7 @@ export default {
             // router.push("/edituser");
             // Use programmatic navigation with props, to be sent to recieving component
             const usernameValue = event.currentTarget.id;
-            console.log(usernameValue);
+            // console.log(usernameValue);
             // router.push({ name: 'edituser', params: { username: username1 } })
             router.push({ name: 'edituser', params: { username: usernameValue } })
         },

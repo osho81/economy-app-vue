@@ -21,8 +21,10 @@ import { getByUsername, updateUser } from '@/service/userService';
 const initialUsername = ref(props.username); // Set initial username string
 const selectedUser = ref<User>(); // Control state
 
+
+// Automatically call the imported getByUsername from UserService
 getByUsername(initialUsername.value).then((response) => { // Use initial username string from ref-VALUE
-    console.log(response);
+    // console.log(response);
     selectedUser.value = response;
 })
 

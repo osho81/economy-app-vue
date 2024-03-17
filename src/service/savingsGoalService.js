@@ -4,7 +4,7 @@ const baseUrl = "http://localhost:8080/api/v1";
 
 export async function getSavingGoals() { 
     const response = await axios.get(baseUrl + "/savings-goals");
-    console.log(response.data);
+    // console.log(response.data);
     return response.data; // Return response data
 }
 

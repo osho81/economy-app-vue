@@ -5,16 +5,20 @@ export default class SavingsGoal {
   goalName = "";
   currentAmountOfCash = "";
   targetAmountOfCash = "";
-  user = "";
+  startDate = "";
+  endDate = "";
+  userId = "";
 
   // Skip all of the other backend fields, for now
 
-  constructor(id, goalName, currentAmountOfCash, targetAmountOfCash, user) {
+  constructor(id, goalName, currentAmountOfCash, targetAmountOfCash, startDate, endDate, userId) {
     this.id = id;
     this.goalName = goalName;
     this.currentAmountOfCash = currentAmountOfCash;
     this.targetAmountOfCash = targetAmountOfCash;
-    this.user = user;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.userId = userId;
   }
 
   getId() {
@@ -32,8 +36,14 @@ export default class SavingsGoal {
   getTargetAmountOfCash() {
     return this.targetAmountOfCash;
   }
-  getUser() {
-    return this.user;
+  getStartDate() {
+    return this.startDate;
+  }
+  getEndDate() {
+    return this.endDate;
+  }
+  getUserId() {
+    return this.userId;
   }
 
 }
