@@ -16,7 +16,7 @@ import type User from '@/models/User';
 import { onMounted, ref } from 'vue';
 import { getByUsername, updateUser } from '@/service/userService';
 
-// Approach with script setup, without export default syntax
+//---- Approach with script setup, without export default syntax ----//
 
 const initialUsername = ref(props.username); // Set initial username string
 const selectedUser = ref<User>(); // Control state
@@ -28,7 +28,7 @@ getByUsername(initialUsername.value).then((response) => { // Use initial usernam
 
 
 // Handle inputs
-const firstNameVal = ref(); // use values for submit method
+const firstNameVal = ref(); // use values in submit method
 const lastNameVal = ref();
 const emailVal = ref();
 
@@ -50,7 +50,7 @@ const handleEmail = (event: any) => {
 
 const submitEditUser = (event: any) => { // Event not necessary
 
-    // Changable fiels to send in with request body
+    // Changable fields to send in with request body
     const firstNameField = firstNameVal.value == null ? selectedUser.value?.firstName : firstNameVal.value;
     const lastNameField = emailVal.value == null ? selectedUser.value?.email : emailVal.value;
     const emailField = emailVal.value == null ? selectedUser.value?.email : emailVal.value;

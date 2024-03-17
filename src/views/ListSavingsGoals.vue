@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const listSaveGoals = ref([]);
+
+
+
 </script> 
 
 
