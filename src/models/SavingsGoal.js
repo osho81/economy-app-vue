@@ -2,7 +2,7 @@ export default class SavingsGoal {
 // Class mirroring savingsGoal entity in backend (Economy-app)
 
   id;
-  goalName = "";
+  bajs = "";
   currentAmountOfCash = "";
   targetAmountOfCash = "";
   startDate = "";
@@ -11,9 +11,9 @@ export default class SavingsGoal {
 
   // Skip all of the other backend fields, for now
 
-  constructor(id, goalName, currentAmountOfCash, targetAmountOfCash, startDate, endDate, userId) {
+  constructor(id, bajs, currentAmountOfCash, targetAmountOfCash, startDate, endDate, userId) {
     this.id = id;
-    this.goalName = goalName;
+    this.bajs = bajs;
     this.currentAmountOfCash = currentAmountOfCash;
     this.targetAmountOfCash = targetAmountOfCash;
     this.startDate = startDate;
@@ -25,10 +25,10 @@ export default class SavingsGoal {
     return this.id;
   }
   getFullName() {
-    return this.goalName + ' ' + this.currentAmountOfCash;
+    return this.bajs + ' ' + this.currentAmountOfCash;
   }
-  getGoalName() {
-    return this.goalName;
+  getbajs() {
+    return this.bajs;
   }
   getCurrentAmountOfCash() {
     return this.currentAmountOfCash;

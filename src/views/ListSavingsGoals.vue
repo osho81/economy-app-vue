@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { getSavingGoals } from '@/service/savingsGoalService';
+import type SavingsGoal from '@/models/SavingsGoal';
 
-const listSaveGoals = ref(); // Manage list state
+const listSaveGoals = ref(); // Manage list state,; start empty
+
 
 // TODO: sortTable is not implemented
 
