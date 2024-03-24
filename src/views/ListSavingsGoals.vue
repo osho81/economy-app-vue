@@ -6,7 +6,7 @@ import type SavingsGoal from '@/models/SavingsGoal';
 const listSaveGoals = ref(); // Manage list state,; start empty
 
 
-// TODO: sortTable is not implemented
+// TODO: sortTable, se if there is a component ready to use
 
 // Automatically call the imported getByUsername from UserService
 getSavingGoals().then((response) =>{
@@ -27,7 +27,7 @@ getSavingGoals().then((response) =>{
             <tr>
                 <th className='p-0 m-0'>
                     <span id='goalId' onclick={{sortTable}}>
-                        Goal id
+                        Savingsgoal id
                         <FontAwesomeIcon icon={typeArrow} className="not-clickable-part ml-1" />
                     </span>
                 </th>
