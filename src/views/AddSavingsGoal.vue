@@ -3,6 +3,8 @@ import router from '@/router';
 import { ref } from 'vue';
 import { createSavingsGoal } from '@/service/savingsGoalService';
 
+// Note: this file is one of the ones using script setup
+
 // Handle inputs
 const savingGoalNameVal = ref(); // use values in submit method
 const currentAmountVal = ref();
