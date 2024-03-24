@@ -15,6 +15,13 @@ getSavingGoals().then((response) =>{
     listSaveGoals.value = response;
 });
 
+
+// Do the sorting logic in this method:
+const sortTable = (event: any) => {
+    // My sorting logic
+}
+
+
 </script> 
 
 
@@ -27,7 +34,7 @@ getSavingGoals().then((response) =>{
         <thead className='text-xs p-0 m-0 space-x-0 sm:text-sm'>
             <tr>
                 <th className='p-0 m-0'>
-                    <span id='goalId' @click="sortTable">
+                    <span id='goalId' @click="sortTable($event)">
                         Savingsgoal id
                         <FontAwesomeIcon icon={typeArrow} className="not-clickable-part ml-1" />
                     </span>

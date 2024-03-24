@@ -45,7 +45,7 @@ const handleUserId = (event: any) => {
     console.log(userIdVal.value);
 }
 
-const submitCreateSavingsGoal = (event: any) => { // Event not necessary
+const submitCreateSavingsGoal = (event: any) => { // Event not necessary/not used here
 
     if (savingGoalNameVal.value == null || currentAmountVal.value == null
         || targetAmountVal.value == null || startDateVal.value == null
