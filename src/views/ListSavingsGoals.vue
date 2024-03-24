@@ -7,6 +7,7 @@ const listSaveGoals = ref(); // Manage list state,; start empty
 
 
 // TODO: sortTable, se if there is a component ready to use
+// Change binding in elements to: @click="sortTable", include event if needed (event)
 
 // Automatically call the imported getByUsername from UserService
 getSavingGoals().then((response) =>{
@@ -26,7 +27,7 @@ getSavingGoals().then((response) =>{
         <thead className='text-xs p-0 m-0 space-x-0 sm:text-sm'>
             <tr>
                 <th className='p-0 m-0'>
-                    <span id='goalId' onclick={{sortTable}}>
+                    <span id='goalId' @click="sortTable">
                         Savingsgoal id
                         <FontAwesomeIcon icon={typeArrow} className="not-clickable-part ml-1" />
                     </span>

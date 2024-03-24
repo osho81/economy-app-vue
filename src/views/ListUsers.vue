@@ -12,7 +12,7 @@ import { ref } from 'vue';
 // const selectedUser = ref<User>(); // Control state
 
 
-// TODO: sortTable is not implemented
+// TODO: sortTable is in table elements, but no method for this is done yet
 
 import router from '@/router';
 
