@@ -18,7 +18,11 @@ getSavingGoals().then((response) =>{
 
 // Do the sorting logic in this method:
 const sortTable = (event: any) => {
-    // My sorting logic
+    // My default sorting logic
+
+
+  // Separate sorting by column according to the event
+
 }
 
 
