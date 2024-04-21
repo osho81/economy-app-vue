@@ -18,7 +18,8 @@ getSavingGoals().then((response) =>{
 
 // Do the sorting logic in this method:
 const sortTable = (event: any) => {
-    // My default sorting logic
+    // My by id sorting
+    // FIX THIS TO REVERSE BACK ALSO
     getSavingGoals().then((response) =>{
     const listSaveGoalsReversed = response.sort((a, b) => b.id - a.id);
     console.log(listSaveGoalsReversed);
