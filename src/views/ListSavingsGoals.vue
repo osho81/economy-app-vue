@@ -19,7 +19,12 @@ getSavingGoals().then((response) =>{
 // Do the sorting logic in this method:
 const sortTable = (event: any) => {
     // My default sorting logic
+    getSavingGoals().then((response) =>{
+    const listSaveGoalsReversed = response.sort((a, b) => b.id - a.id);
+    console.log(listSaveGoalsReversed);
+    listSaveGoals.value = listSaveGoalsReversed;
 
+});
 
   // Separate sorting by column according to the event
 
