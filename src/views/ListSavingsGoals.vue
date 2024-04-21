@@ -21,7 +21,7 @@ const sortTable = (event: any) => {
     // My by id sorting
     // FIX THIS TO REVERSE BACK ALSO
     getSavingGoals().then((response) =>{
-    const listSaveGoalsReversed = response.sort((a, b) => b.id - a.id);
+    const listSaveGoalsReversed = response.sort((a: { id: number; }, b: { id: number; }) => b.id - a.id); // Inferred type
     console.log(listSaveGoalsReversed);
     listSaveGoals.value = listSaveGoalsReversed;
 
