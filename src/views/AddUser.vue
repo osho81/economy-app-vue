@@ -2,7 +2,7 @@
 
 import router from '@/router';
 
-import type User from '@/models/User';
+import User from '@/models/User';
 import { ref } from 'vue';
 import { createUser } from '@/service/userService';
 
@@ -41,10 +41,14 @@ const handlePassword = (event: any) => {
 
 const submitCreateUser = (event: any) => { // Event not necessary
 
-    let userToCreate = {
-        firstName: firstNameVal.value, lastName: lastNameVal.value,
-        userName: userNameVal.value, email: emailVal.value, password: passwordVal.value
-    }; // keep password as is in backend
+    // // pass in values of user to create
+    // let userToCreate = {
+    //     firstName: firstNameVal.value, lastName: lastNameVal.value,
+    //     userName: userNameVal.value, email: emailVal.value, password: passwordVal.value
+    // }; // keep password as is in backend
+
+    // Alternative, using imported "mirroring" model/entity User
+    let userToCreate = new User(firstNameVal.value, lastNameVal.value, userNameVal.value, emailVal.value, passwordVal.value); 
 
     createUser(userToCreate).then((response) => {
         console.log(response);
