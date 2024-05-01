@@ -78,42 +78,42 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary/not use
 
 <template>
     <div className='flex flex-col justify-center items-center p-10'>
-
+        <h2 class="text-center font-semibold text-lg">Create Savings Goal</h2>
         <div className="form-control w-full max-w-xs mt-2 space-y-1">
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Name of savingsgoal: </span>
+                <span className="label-text text-sm font-semibold mb-0">Name of savingsgoal: </span>
             </label>
             <input type="text" placeholder="Example: Car Purchase" @input="handleGoalName($event)"
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Current amount: </span>
+                <span className="label-text text-sm font-semibold mb-0">Current amount: </span>
             </label>
             <input type="number" placeholder="0" @input="handleCurrentAmount($event)"
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Target amount: </span>
+                <span className="label-text text-sm font-semibold mb-0">Target amount: </span>
             </label>
             <input type="number" placeholder="0" @input=handleTargetAmount($event)
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">Start date: </span>
+                <span className="label-text text-sm font-semibold mb-0">Start date: </span>
             </label>
-            <input type="date" @input=handleStartDate($event) className="input input-sm input-bordered w-full max-w-xs" />
+            <input type="date" @input=handleStartDate($event) className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">End date: </span>
+                <span className="label-text text-sm font-semibold mb-0">End date: </span>
             </label>
-            <input type="date" @input=handleEndDate($event) className="input input-sm input-bordered w-full max-w-xs" />
+            <input type="date" @input=handleEndDate($event) className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
             <label className="label justify-center">
-                <span className="label-text text-sm font-semibold">User ID: </span>
+                <span className="label-text text-sm font-semibold mb-0">User ID: </span>
             </label>
             <input type="number" placeholder="0" @input=handleUserId($event)
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs mb-0" />
 
         </div>
         <div className="flex justify-center items-center p-5">
