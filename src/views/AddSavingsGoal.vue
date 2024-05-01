@@ -85,13 +85,13 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary/not use
                 <span className="label-text text-sm font-semibold">Name of savingsgoal: </span>
             </label>
             <input type="text" placeholder="Example: Car Purchase" @input="handleGoalName($event)"
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs justify-center" />
 
             <label className="label justify-center pb-1">
                 <span className="label-text text-sm font-semibold">Current amount: </span>
             </label>
             <input type="number" placeholder="0" @input="handleCurrentAmount($event)"
-                className="input input-sm input-bordered w-full max-w-xs" />
+                className="input input-sm input-bordered w-full max-w-xs justify-center" />
 
             <label className="label justify-center pb-1">
                 <span className="label-text text-sm font-semibold">Target amount: </span>
@@ -124,4 +124,10 @@ const submitCreateSavingsGoal = (event: any) => { // Event not necessary/not use
     </div>
 </template>
 
-<style></style>
+<style>
+
+/* Align input-placeholders better be done here than inline */
+input {
+  text-align: center;
+}
+</style>
