@@ -64,11 +64,11 @@ const submitCreateUser = (event: any) => { // Event not necessary
 
 <template>
     <div class="p-8 ml-[30%] w-[40%]">
-        <h2 class="text-center font-bold text-lg">Create User</h2>
+        <h2 class="text-center font-semibold text-lg">Create User</h2>
         <table className='table text-base space-x-4'>
             <tbody id='goal-details-table'>
                 <tr>
-                    <td className='pb-4 m-0'>First name </td>
+                    <td className='pb-4 m-0 font-semibold'>First name </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
@@ -76,7 +76,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
                     </td>
                 </tr>
                 <tr>
-                    <td className='pb-4 m-0'>Last name </td>
+                    <td className='pb-4 m-0 font-semibold'>Last name </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
@@ -84,7 +84,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
                     </td>
                 </tr>
                 <tr>
-                    <td className='pb-4 m-0'>Email </td>
+                    <td className='pb-4 m-0 font-semibold'>Email </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
@@ -92,7 +92,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
                     </td>
                 </tr>
                 <tr>
-                    <td className='pb-4 m-0'>Username </td>
+                    <td className='pb-4 m-0 font-semibold'>Username </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
@@ -100,7 +100,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
                     </td>
                 </tr>
                 <tr>
-                    <td className='pb-4 m-0'>Password </td>
+                    <td className='pb-4 m-0 font-semibold'>Password </td>
                     <td className='p-0 m-0 text-right'>
                         <input type="text"
                             className="input input-sm input-bordered w-full max-w-xs font-semibold text-right"
