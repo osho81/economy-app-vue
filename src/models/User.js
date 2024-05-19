@@ -1,7 +1,8 @@
 export default class User {
 // Class mirroring  User entity in backend (Economy-app)
+//
 
-  id; 
+  // id; 
   firstName = "";
   lastName = "";
   email = "";
@@ -13,8 +14,8 @@ export default class User {
 
   // constructor(id, firstName, lastName, email, userName, password, savingGoals) {
     
-  constructor(id, firstName, lastName, email, userName, password) {
-    this.id = id;
+  constructor(firstName, lastName, email, userName, password) {
+    // this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
