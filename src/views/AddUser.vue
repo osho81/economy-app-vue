@@ -48,6 +48,7 @@ const submitCreateUser = (event: any) => { // Event not necessary
     // }; // keep password as is in backend
 
     // Alternative, using imported "mirroring" model/entity User
+    console.log(firstNameVal.value);
     let userToCreate = new User(firstNameVal.value, lastNameVal.value, userNameVal.value, emailVal.value, passwordVal.value); 
 
     createUser(userToCreate).then((response) => {
