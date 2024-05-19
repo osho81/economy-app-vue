@@ -30,7 +30,7 @@ defineOptions({
                     </li>
                     <li>
                         <RouterLink to="/listsavingsgoals" className="font-semibold text-sm active:text-sm">List
-                            savegoals</RouterLink>
+                            all savegoals</RouterLink>
                     </li>
                     <li>
                         <a>Create</a>
@@ -59,7 +59,7 @@ defineOptions({
                     <RouterLink className="font-base" to="/listusers">List users</RouterLink>
                 </li>
                 <li>
-                    <RouterLink className="font-base" to="/listsavingsgoals">List savegoals</RouterLink>
+                    <RouterLink className="font-base" to="/listsavingsgoals">List all savegoals</RouterLink>
                 </li>
                 <li tabIndex={0}>
                     <details className='dropdown'>
