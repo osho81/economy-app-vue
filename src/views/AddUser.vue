@@ -42,15 +42,13 @@ const handlePassword = (event: any) => {
 const submitCreateUser = (event: any) => { // Event not necessary
 
     // pass in values of user to create
-    // let userToCreate = {
-    //     firstName: firstNameVal.value, lastName: lastNameVal.value,
-    //     userName: userNameVal.value, email: emailVal.value, password: passwordVal.value
-    // }; // keep password as is in backend; ignore user's savingsgoals
+    let userToCreate = {
+        firstName: firstNameVal.value, lastName: lastNameVal.value,
+        userName: userNameVal.value, email: emailVal.value, password: passwordVal.value
+    }; // keep password as is in backend; ignore user's savingsgoals
 
     // Alternative, using imported "mirroring" model/entity User - without id (& no savingsgoals for user)
-    let userToCreate = new User(firstNameVal.value, lastNameVal.value, userNameVal.value, emailVal.value, passwordVal.value); 
-
-    console.log(userToCreate);
+    // let userToCreate = new User(firstNameVal.value, lastNameVal.value, userNameVal.value, emailVal.value, passwordVal.value); 
 
     createUser(userToCreate).then((response) => {
         console.log(response);
