@@ -9,16 +9,18 @@ export default class User {
   password = "";
 
   // List of savingsgoals for user
-  savingGoals = [];
+  // savingGoals = [];
 
-  constructor(id, firstName, lastName, email, userName, password, savingGoals) {
+  // constructor(id, firstName, lastName, email, userName, password, savingGoals) {
+    
+  constructor(id, firstName, lastName, email, userName, password) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.userName = userName;
     this.password = password;
-    this.savingGoals = savingGoals;
+    // this.savingGoals = savingGoals;
   }
 
   getId() {
@@ -43,8 +45,8 @@ export default class User {
     return this.password;
   }
 
-  getSavingGoals() {
-    return this.savingGoals;
-  }
+  // getSavingGoals() {
+  //   return this.savingGoals;
+  // }
 
 }

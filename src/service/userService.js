@@ -15,6 +15,7 @@ export async function getByUsername(username) {
 }
 
 export async function createUser(userToCreate) {
+    console.log(userToCreate);
     const response = await axios.post(baseUrl + "/users", userToCreate);
     console.log(response.data);
     return response.data;
