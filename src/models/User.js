@@ -10,7 +10,8 @@ export default class User {
   password = "";
 
   // List of savingsgoals for user
-  // savingGoals = []; // not used at frontend - will be null; can also initially set as null here
+  // can be skipped at frontend, but weill initially set as null here, since it is used in ListUsers
+  // savingGoals = []; 
 
   // constructor(id, firstName, lastName, email, userName, password, savingGoals) {
     
