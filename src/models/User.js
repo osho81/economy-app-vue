@@ -1,8 +1,8 @@
 export default class User {
 // Class mirroring  User entity in backend (Economy-app)
-// No id - id will be added dynamically at backend
+// No id - id will be added at backend
 
-  // id; 
+  // id; // Is added dynamically at backend
   firstName = "";
   lastName = "";
   email = "";
@@ -10,7 +10,7 @@ export default class User {
   password = "";
 
   // List of savingsgoals for user
-  // savingGoals = []; // Ignore this property at frontend, or add and initially set as null
+  // savingGoals = []; // not used at frontend - will be null; can also initially set as null here
 
   // constructor(id, firstName, lastName, email, userName, password, savingGoals) {
     

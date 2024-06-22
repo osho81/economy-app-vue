@@ -1,7 +1,7 @@
 # economy-app-vue
 
 This vue app is to practise on vue.
-Backend is [economy-app](https://github.com/osho81/economy-app).
+Backend for this frontend can be found at [economy-app](https://github.com/osho81/economy-app).
 
 ## Recommended IDE Setup
 
