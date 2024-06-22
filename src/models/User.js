@@ -11,10 +11,9 @@ export default class User {
 
   // List of savingsgoals for user
   // can be skipped at frontend, but weill initially set as null here, since it is used in ListUsers
-  // savingGoals = []; 
+  savingGoals = []; 
 
-  // constructor(id, firstName, lastName, email, userName, password, savingGoals) {
-    
+  // constructor(id, firstName, lastName, email, userName, password, savingGoals) { // No id needed at frontend in this case
   constructor(firstName, lastName, email, userName, password) {
     // this.id = id;
     this.firstName = firstName;
